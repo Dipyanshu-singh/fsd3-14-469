@@ -1,13 +1,20 @@
 import http from "http";
+import { getAllTeams } from "./pages/teams.js";
 
-const server = http.createServer();
-server.on('request',(req,res)=>{
-    res.write("welcome to server side programming");
-    res.write("nodemon tracking file");
-    res.end("<h2> Welcome to serverside </h2>");
+const PORT = 6000;
+
+
+const server = http.createServer((req, res) => {
+    if (req.url === "/" && req.method === "GET") {
+        const teams = getAllTeams();
+        res.write(JSON.stringify(teams));
+        res.end();
+    } else {
+        res.statusCode = 404;
+        res.end();
+    }
 });
 
-
-server.listen(3000,()=>{
-    console.log("server running");
+server.listen(PORT, () => {
+    console.log("SIH server running", PORT);
 });
