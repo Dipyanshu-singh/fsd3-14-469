@@ -7,10 +7,15 @@ const products =[
 ];
 
 
-const ListItem = products.map((item)=> (<li key={item.id}>{item.title}</li>));
+const ListItem = products.map((item)=> (
+    <li key={item.id} style={{color:item.isFruit?"red":"green"}}>
+        {item.title}
+    </li>
+));
 console.log(ListItem);
-const Fruit =()=>{
-    return <ul>(ListItem)</ul>
+
+const Fruit = () =>{
+    return <ul>{ListItem}</ul>
 
 }
 
