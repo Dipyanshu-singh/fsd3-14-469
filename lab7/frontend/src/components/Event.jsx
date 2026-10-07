@@ -1,25 +1,20 @@
 const MyButton = () => {
-    const handleClick = () => {
-        alert("Button clicked!");
-    };
+    const handleClick = ()=>{
+        alert('Button Clicked')
+    }
 
-    return (
-        <button
-            style={{ height: "40px", width: "100px" }}
-            onClick={handleClick}
-        >
-            Click Me
-        </button>
-    );
+  return <button 
+  style={{ height: "40px", width: "100px" }} 
+  onClick={handleClick}>
+    Click Me
+</button>;
 };
 
 const Event = () => {
-    return (
-        <div>
-            <h1>Event Handling Example</h1>
-            <MyButton />
-        </div>
-    );
+  return (
+    <div>
+      <MyButton />
+    </div>
+  );
 };
-
 export default Event;
